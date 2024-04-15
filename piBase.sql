@@ -1,3 +1,4 @@
+CREATE SCHEMA proyectoint;
 use proyectoint;
 
 create table usuarios(
@@ -41,13 +42,55 @@ FOREIGN KEY (id_user) REFERENCES usuarios(id)
 
 SELECT * FROM usuarios;
 INSERT INTO usuarios(id, email, contraseña, fecha, dni, fotodeperfil, createdAt,updatedAt,deletedAt)
-values (DEFAULT,"simocahn@gmail.com","simon","2020-05-02",46649856,"default-image.png", NULL,NULL,NULL);
+values (DEFAULT,"simocahn@gmail.com","simon","2020-05-02",46649856,"default-image.png", NULL,NULL,NULL),
+(DEFAULT,"matiasvb@gmail.com","matias","2020-05-02",46649857,"default-image.png", NULL,NULL,NULL),
+(DEFAULT,"bautip@gmail.com","bauti","2020-05-02",46649858,"default-image.png", NULL,NULL,NULL),
+(DEFAULT,"tomyc@gmail.com","tomi","2020-05-02",46649859,"default-image.png", NULL,NULL,NULL),
+(DEFAULT,"juanf@gmail.com","juan","2020-05-02",46649860,"default-image.png", NULL,NULL,NULL);
  
  SELECT * FROM productos;
  INSERT INTO productos(id,imagen_producto,producto,descripcion,createdAt,updatedAt,deletedAt,cliente_id)
- VALUES (DEFAULT, "img-cafetera-moulinex.jpg", "cafetera", "Hace café", NULL, NULL, NULL, 1);
+ VALUES (DEFAULT, "inter.jpg", "Inter Dragon 2009", "Camiseta Del Inter De Milan 09/10", NULL, NULL, NULL, 1),
+ (DEFAULT, "arsenal.jpg", "Arsenal 2005", "Camiseta Del Arsenal 05/06", NULL, NULL, NULL, 2),
+ (DEFAULT, "barca.jpg", "Barca 2024", "Camiseta Del Barcelona 23/24", NULL, NULL, NULL, 3),
+ (DEFAULT, "real-madrid.jpg", "Real Madrid 2017", "Camiseta Del Real Madrid 17/18", NULL, NULL, NULL, 4),
+ (DEFAULT, "man-city.jpg", "Man City 2024", "Camiseta Del Manchester City 23/24", NULL, NULL, NULL, 5),
+ (DEFAULT, "man-utd.jpg", "Man Utd 2024", "Camiseta Del Manchester United 23/24", NULL, NULL, NULL, 1),
+ (DEFAULT, "roma.jpg", "Roma 2024", "Camiseta De la Roma 23/24", NULL, NULL, NULL, 2),
+ (DEFAULT, "casla.jpg", "San Lorenzo 2024", "Camiseta De San Lorenzo De Almagro 24/25", NULL, NULL, NULL, 3),
+ (DEFAULT, "bayern.jpg", "Bayer Munich 2010", "Camiseta Del Bayer Munich 10/11", NULL, NULL, NULL, 4),
+ (DEFAULT, "milan.jpg", "Milan 2006", "Camiseta Del Milan 06/07", NULL, NULL, NULL, 5);
  
  
 SELECT * FROM comentarios;
 INSERT INTO comentarios(id, comentario, createdAt, updatedAt, deletedAt, id_post, id_user)
-VALUES (DEFAULT, "Muy buena", NULL, NULL, NULL,1,1); 
+VALUES (DEFAULT, "Muy buena", NULL, NULL, NULL,1,2),
+(DEFAULT, "Que cara", NULL, NULL, NULL,1,3),
+(DEFAULT, "La quiero!!!", NULL, NULL, NULL,1,4),
+(DEFAULT, "Muy buena", NULL, NULL, NULL,2,5),
+(DEFAULT, "Que cara", NULL, NULL, NULL,2,3),
+(DEFAULT, "La quiero!!!", NULL, NULL, NULL,2,4),
+ (DEFAULT, "Muy buena", NULL, NULL, NULL,3,2),
+(DEFAULT, "Que cara", NULL, NULL, NULL,3,5),
+(DEFAULT, "La quiero!!!", NULL, NULL, NULL,3,4),
+(DEFAULT, "Muy buena", NULL, NULL, NULL,4,2),
+(DEFAULT, "Que cara", NULL, NULL, NULL,4,3),
+(DEFAULT, "La quiero!!!", NULL, NULL, NULL,4,1),
+(DEFAULT, "Muy buena", NULL, NULL, NULL,5,2),
+(DEFAULT, "Que cara", NULL, NULL, NULL,5,3),
+(DEFAULT, "La quiero!!!", NULL, NULL, NULL,5,4),
+(DEFAULT, "Muy buena", NULL, NULL, NULL,6,2),
+(DEFAULT, "Que cara", NULL, NULL, NULL,6,3),
+(DEFAULT, "La quiero!!!", NULL, NULL, NULL,6,4),
+(DEFAULT, "Muy buena", NULL, NULL, NULL,7,2),
+(DEFAULT, "Que cara", NULL, NULL, NULL,7,3),
+(DEFAULT, "La quiero!!!", NULL, NULL, NULL,7,4),
+(DEFAULT, "Muy buena", NULL, NULL, NULL,8,2),
+(DEFAULT, "Que cara", NULL, NULL, NULL,8,3),
+(DEFAULT, "La quiero!!!", NULL, NULL, NULL,8,4),
+(DEFAULT, "Muy buena", NULL, NULL, NULL,9,2),
+(DEFAULT, "Que cara", NULL, NULL, NULL,9,3),
+(DEFAULT, "La quiero!!!", NULL, NULL, NULL,9,4),
+(DEFAULT, "Muy buena", NULL, NULL, NULL,10,2),
+(DEFAULT, "Que cara", NULL, NULL, NULL,10,3),
+(DEFAULT, "La quiero!!!", NULL, NULL, NULL,10,4);
