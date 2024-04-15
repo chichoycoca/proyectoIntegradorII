@@ -50,4 +50,4 @@ values (DEFAULT,"simocahn@gmail.com","simon","2020-05-02",46649856,"default-imag
  
 SELECT * FROM comentarios;
 INSERT INTO comentarios(id, comentario, createdAt, updatedAt, deletedAt, id_post, id_user)
-VALUES (DEFAULT, "Muy buena", NULL, NULL, NULL,1,1);
+VALUES (DEFAULT, "Muy buena", NULL, NULL, NULL,1,1); 
