@@ -70,5 +70,203 @@ const db = {
                 texto: 'La quiero!!!',
                 id_comentador: '2',
             }]
-        }],  
+        },
+        {        
+            id: '2',
+            imagen: 'foto',
+            nombre: 'Arsenal 2005',
+            descripcion: 'Camiseta Del Arsenal 05/06',
+            id_cliente: '1',
+            comentarios:[{
+                id_comentario: '1',
+                texto: 'Muy buena',
+                id_comentador: '3',
+            },
+            {
+                id_comentario: '2',
+                texto: 'Que cara',
+                id_comentador: '1',
+            },
+            {
+                id_comentario: '3',
+                texto: 'La quiero!!!',
+                id_comentador: '2',
+            }]
+        },
+        {        
+            id: '1',
+            imagen: 'foto',
+            nombre: 'Inter dragon 2009',
+            descripcion: 'Camiseta del inter de milan 09/10',
+            id_cliente: '1',
+            comentarios:[{
+                id_comentario: '1',
+                texto: 'Muy buena',
+                id_comentador: '3',
+            },
+            {
+                id_comentario: '2',
+                texto: 'Que cara',
+                id_comentador: '1',
+            },
+            {
+                id_comentario: '3',
+                texto: 'La quiero!!!',
+                id_comentador: '2',
+            }]
+        },
+        {        
+            id: '1',
+            imagen: 'foto',
+            nombre: 'Inter dragon 2009',
+            descripcion: 'Camiseta del inter de milan 09/10',
+            id_cliente: '1',
+            comentarios:[{
+                id_comentario: '1',
+                texto: 'Muy buena',
+                id_comentador: '3',
+            },
+            {
+                id_comentario: '2',
+                texto: 'Que cara',
+                id_comentador: '1',
+            },
+            {
+                id_comentario: '3',
+                texto: 'La quiero!!!',
+                id_comentador: '2',
+            }]
+        },
+        {        
+            id: '1',
+            imagen: 'foto',
+            nombre: 'Inter dragon 2009',
+            descripcion: 'Camiseta del inter de milan 09/10',
+            id_cliente: '1',
+            comentarios:[{
+                id_comentario: '1',
+                texto: 'Muy buena',
+                id_comentador: '3',
+            },
+            {
+                id_comentario: '2',
+                texto: 'Que cara',
+                id_comentador: '1',
+            },
+            {
+                id_comentario: '3',
+                texto: 'La quiero!!!',
+                id_comentador: '2',
+            }]
+        },
+        {        
+            id: '1',
+            imagen: 'foto',
+            nombre: 'Inter dragon 2009',
+            descripcion: 'Camiseta del inter de milan 09/10',
+            id_cliente: '1',
+            comentarios:[{
+                id_comentario: '1',
+                texto: 'Muy buena',
+                id_comentador: '3',
+            },
+            {
+                id_comentario: '2',
+                texto: 'Que cara',
+                id_comentador: '1',
+            },
+            {
+                id_comentario: '3',
+                texto: 'La quiero!!!',
+                id_comentador: '2',
+            }]
+        },
+        {        
+            id: '1',
+            imagen: 'foto',
+            nombre: 'Inter dragon 2009',
+            descripcion: 'Camiseta del inter de milan 09/10',
+            id_cliente: '1',
+            comentarios:[{
+                id_comentario: '1',
+                texto: 'Muy buena',
+                id_comentador: '3',
+            },
+            {
+                id_comentario: '2',
+                texto: 'Que cara',
+                id_comentador: '1',
+            },
+            {
+                id_comentario: '3',
+                texto: 'La quiero!!!',
+                id_comentador: '2',
+            }]
+        },
+        {        
+            id: '1',
+            imagen: 'foto',
+            nombre: 'Inter dragon 2009',
+            descripcion: 'Camiseta del inter de milan 09/10',
+            id_cliente: '1',
+            comentarios:[{
+                id_comentario: '1',
+                texto: 'Muy buena',
+                id_comentador: '3',
+            },
+            {
+                id_comentario: '2',
+                texto: 'Que cara',
+                id_comentador: '1',
+            },
+            {
+                id_comentario: '3',
+                texto: 'La quiero!!!',
+                id_comentador: '2',
+            }]
+        },
+        {        
+            id: '1',
+            imagen: 'foto',
+            nombre: 'Inter dragon 2009',
+            descripcion: 'Camiseta del inter de milan 09/10',
+            id_cliente: '1',
+            comentarios:[{
+                id_comentario: '1',
+                texto: 'Muy buena',
+                id_comentador: '3',
+            },
+            {
+                id_comentario: '2',
+                texto: 'Que cara',
+                id_comentador: '1',
+            },
+            {
+                id_comentario: '3',
+                texto: 'La quiero!!!',
+                id_comentador: '2',
+            }]
+        },
+        {        
+            id: '1',
+            imagen: 'foto',
+            nombre: 'Inter dragon 2009',
+            descripcion: 'Camiseta del inter de milan 09/10',
+            id_cliente: '1',
+            comentarios:[{
+                id_comentario: '1',
+                texto: 'Muy buena',
+                id_comentador: '3',
+            },
+            {
+                id_comentario: '2',
+                texto: 'Que cara',
+                id_comentador: '1',
+            },
+            {
+                id_comentario: '3',
+                texto: 'La quiero!!!',
+                id_comentador: '2',
+            }]
+        }]
 }

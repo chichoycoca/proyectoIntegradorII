@@ -1,17 +1,9 @@
-const db = require('../db')
-const router = require('../routes/productoRoute')
 
-let productoController= {
-    index: function(req,res){
-        return res.render('index', {
-
-        })
-    },
+let productoController = {
+    
     producto: function(req,res){
-        return res.render('product', {
-            
-        })
-    },   
+        return res.render('product', {       })
+    }
 }
 
-module.exports= router
+module.exports = productoController
