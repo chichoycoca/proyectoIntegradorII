@@ -10,6 +10,8 @@
   --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
+  --baby-green: #d3e18d; 
+  --base-green: #bbc87a; 
   --base-font-family: 'Roboto', sans-serif
 }
 
@@ -68,7 +70,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: var(--baby-green);
 }
 
 .main-header_home-link,
@@ -175,7 +177,7 @@ hr {
 }
 
 .product-box {
-  background-color: #ffffff;
+  background-color: var(--base-green);
   border-radius: 5px;
   overflow: hidden;
   transition: 300ms;
@@ -259,7 +261,7 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-color: var(--baby-green);
   padding: 20px 0;
   margin-top: 80px;
 }
