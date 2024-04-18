@@ -76,6 +76,94 @@ const db = {
             imagen: 'foto',
             nombre: 'Arsenal 2005',
             descripcion: 'Camiseta Del Arsenal 05/06',
+            id_cliente: '2',
+            comentarios:[{
+                id_comentario: '1',
+                texto: 'Muy buena',
+                id_comentador: '3',
+            },
+            {
+                id_comentario: '2',
+                texto: 'Que cara',
+                id_comentador: '1',
+            },
+            {
+                id_comentario: '3',
+                texto: 'La quiero!!!',
+                id_comentador: '2',
+            }]
+        },
+        {        
+            id: '3',
+            imagen: 'foto',
+            nombre: 'Barca 2024',
+            descripcion: 'Camiseta Del Barcelona 23/24',
+            id_cliente: '3',
+            comentarios:[{
+                id_comentario: '1',
+                texto: 'Muy buena',
+                id_comentador: '3',
+            },
+            {
+                id_comentario: '2',
+                texto: 'Que cara',
+                id_comentador: '1',
+            },
+            {
+                id_comentario: '3',
+                texto: 'La quiero!!!',
+                id_comentador: '2',
+            }]
+        },
+        {        
+            id: '4',
+            imagen: 'foto',
+            nombre: 'Real Madrid 2017',
+            descripcion: 'Camiseta Del Real Madrid 17/18',
+            id_cliente: '4',
+            comentarios:[{
+                id_comentario: '1',
+                texto: 'Muy buena',
+                id_comentador: '3',
+            },
+            {
+                id_comentario: '2',
+                texto: 'Que cara',
+                id_comentador: '1',
+            },
+            {
+                id_comentario: '3',
+                texto: 'La quiero!!!',
+                id_comentador: '2',
+            }]
+        },
+        {        
+            id: '5',
+            imagen: 'foto',
+            nombre: 'Man City 2024',
+            descripcion: 'Camiseta Del Manchester City 23/24',
+            id_cliente: '5',
+            comentarios:[{
+                id_comentario: '1',
+                texto: 'Muy buena',
+                id_comentador: '3',
+            },
+            {
+                id_comentario: '2',
+                texto: 'Que cara',
+                id_comentador: '1',
+            },
+            {
+                id_comentario: '3',
+                texto: 'La quiero!!!',
+                id_comentador: '2',
+            }]
+        },
+        {        
+            id: '6',
+            imagen: 'foto',
+            nombre: 'Man Utd 2024',
+            descripcion: 'Camiseta Del Manchester United 23/24',
             id_cliente: '1',
             comentarios:[{
                 id_comentario: '1',
@@ -94,11 +182,11 @@ const db = {
             }]
         },
         {        
-            id: '1',
+            id: '7',
             imagen: 'foto',
-            nombre: 'Inter dragon 2009',
-            descripcion: 'Camiseta del inter de milan 09/10',
-            id_cliente: '1',
+            nombre: 'Roma 2024',
+            descripcion: 'Camiseta De la Roma 23/24',
+            id_cliente: '2',
             comentarios:[{
                 id_comentario: '1',
                 texto: 'Muy buena',
@@ -116,11 +204,11 @@ const db = {
             }]
         },
         {        
-            id: '1',
+            id: '8',
             imagen: 'foto',
-            nombre: 'Inter dragon 2009',
-            descripcion: 'Camiseta del inter de milan 09/10',
-            id_cliente: '1',
+            nombre: 'San Lorenzo 2024',
+            descripcion: 'Camiseta De San Lorenzo De Almagro 24/25',
+            id_cliente: '3',
             comentarios:[{
                 id_comentario: '1',
                 texto: 'Muy buena',
@@ -138,11 +226,11 @@ const db = {
             }]
         },
         {        
-            id: '1',
+            id: '9',
             imagen: 'foto',
-            nombre: 'Inter dragon 2009',
-            descripcion: 'Camiseta del inter de milan 09/10',
-            id_cliente: '1',
+            nombre: 'Bayer Munich 2010',
+            descripcion: 'Camiseta Del Bayer Munich 10/11',
+            id_cliente: '4',
             comentarios:[{
                 id_comentario: '1',
                 texto: 'Muy buena',
@@ -160,99 +248,11 @@ const db = {
             }]
         },
         {        
-            id: '1',
+            id: '10',
             imagen: 'foto',
-            nombre: 'Inter dragon 2009',
-            descripcion: 'Camiseta del inter de milan 09/10',
-            id_cliente: '1',
-            comentarios:[{
-                id_comentario: '1',
-                texto: 'Muy buena',
-                id_comentador: '3',
-            },
-            {
-                id_comentario: '2',
-                texto: 'Que cara',
-                id_comentador: '1',
-            },
-            {
-                id_comentario: '3',
-                texto: 'La quiero!!!',
-                id_comentador: '2',
-            }]
-        },
-        {        
-            id: '1',
-            imagen: 'foto',
-            nombre: 'Inter dragon 2009',
-            descripcion: 'Camiseta del inter de milan 09/10',
-            id_cliente: '1',
-            comentarios:[{
-                id_comentario: '1',
-                texto: 'Muy buena',
-                id_comentador: '3',
-            },
-            {
-                id_comentario: '2',
-                texto: 'Que cara',
-                id_comentador: '1',
-            },
-            {
-                id_comentario: '3',
-                texto: 'La quiero!!!',
-                id_comentador: '2',
-            }]
-        },
-        {        
-            id: '1',
-            imagen: 'foto',
-            nombre: 'Inter dragon 2009',
-            descripcion: 'Camiseta del inter de milan 09/10',
-            id_cliente: '1',
-            comentarios:[{
-                id_comentario: '1',
-                texto: 'Muy buena',
-                id_comentador: '3',
-            },
-            {
-                id_comentario: '2',
-                texto: 'Que cara',
-                id_comentador: '1',
-            },
-            {
-                id_comentario: '3',
-                texto: 'La quiero!!!',
-                id_comentador: '2',
-            }]
-        },
-        {        
-            id: '1',
-            imagen: 'foto',
-            nombre: 'Inter dragon 2009',
-            descripcion: 'Camiseta del inter de milan 09/10',
-            id_cliente: '1',
-            comentarios:[{
-                id_comentario: '1',
-                texto: 'Muy buena',
-                id_comentador: '3',
-            },
-            {
-                id_comentario: '2',
-                texto: 'Que cara',
-                id_comentador: '1',
-            },
-            {
-                id_comentario: '3',
-                texto: 'La quiero!!!',
-                id_comentador: '2',
-            }]
-        },
-        {        
-            id: '1',
-            imagen: 'foto',
-            nombre: 'Inter dragon 2009',
-            descripcion: 'Camiseta del inter de milan 09/10',
-            id_cliente: '1',
+            nombre: 'Milan 2006',
+            descripcion: 'Camiseta Del Milan 06/07',
+            id_cliente: '5',
             comentarios:[{
                 id_comentario: '1',
                 texto: 'Muy buena',
