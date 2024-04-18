@@ -51,7 +51,7 @@ const db = {
 
     producto:[{        
             id: '1',
-            imagen: 'foto',
+            imagen: '../public/images/products/inter-dragon.jpg',
             nombre: 'Inter dragon 2009',
             descripcion: 'Camiseta del inter de milan 09/10',
             id_cliente: '1',
@@ -73,7 +73,7 @@ const db = {
         },
         {        
             id: '2',
-            imagen: 'foto',
+            imagen: '../public/images/products/arsenal.jpg',
             nombre: 'Arsenal 2005',
             descripcion: 'Camiseta Del Arsenal 05/06',
             id_cliente: '2',
@@ -95,7 +95,7 @@ const db = {
         },
         {        
             id: '3',
-            imagen: 'foto',
+            imagen: '../public/images/products/barca.jpg',
             nombre: 'Barca 2024',
             descripcion: 'Camiseta Del Barcelona 23/24',
             id_cliente: '3',
@@ -117,7 +117,7 @@ const db = {
         },
         {        
             id: '4',
-            imagen: 'foto',
+            imagen: '../public/images/products/rm.jpg',
             nombre: 'Real Madrid 2017',
             descripcion: 'Camiseta Del Real Madrid 17/18',
             id_cliente: '4',
@@ -139,7 +139,7 @@ const db = {
         },
         {        
             id: '5',
-            imagen: 'foto',
+            imagen: '../public/images/products/man-city.jpg',
             nombre: 'Man City 2024',
             descripcion: 'Camiseta Del Manchester City 23/24',
             id_cliente: '5',
@@ -161,7 +161,7 @@ const db = {
         },
         {        
             id: '6',
-            imagen: 'foto',
+            imagen: '../public/images/products/man-utd.jpg',
             nombre: 'Man Utd 2024',
             descripcion: 'Camiseta Del Manchester United 23/24',
             id_cliente: '1',
@@ -183,7 +183,7 @@ const db = {
         },
         {        
             id: '7',
-            imagen: 'foto',
+            imagen: '../public/images/products/roma.jpg',
             nombre: 'Roma 2024',
             descripcion: 'Camiseta De la Roma 23/24',
             id_cliente: '2',
@@ -205,7 +205,7 @@ const db = {
         },
         {        
             id: '8',
-            imagen: 'foto',
+            imagen: '../public/images/products/casla.jpg',
             nombre: 'San Lorenzo 2024',
             descripcion: 'Camiseta De San Lorenzo De Almagro 24/25',
             id_cliente: '3',
@@ -227,7 +227,7 @@ const db = {
         },
         {        
             id: '9',
-            imagen: 'foto',
+            imagen: '../public/images/products/bayern.jpg',
             nombre: 'Bayer Munich 2010',
             descripcion: 'Camiseta Del Bayer Munich 10/11',
             id_cliente: '4',
@@ -249,7 +249,7 @@ const db = {
         },
         {        
             id: '10',
-            imagen: 'foto',
+            imagen: '../public/images/products/milan.jpg',
             nombre: 'Milan 2006',
             descripcion: 'Camiseta Del Milan 06/07',
             id_cliente: '5',
