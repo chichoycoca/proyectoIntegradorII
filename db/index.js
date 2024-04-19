@@ -206,8 +206,8 @@ const db = {
         {        
             id: '8',
             imagen: '../public/images/products/casla.jpg',
-            nombre: 'San Lorenzo 2024',
-            descripcion: 'Camiseta De San Lorenzo De Almagro 24/25',
+            nombre: 'San Lorenzo 2021',
+            descripcion: 'Camiseta De San Lorenzo De Almagro 21/22',
             id_cliente: '3',
             comentarios:[{
                 id_comentario: '1',
