@@ -1,5 +1,4 @@
-var express = require('express');
-var router = express.Router();
+const db = require('../db/index')
 
 let usuarioController = {
     login: function (req, res) {

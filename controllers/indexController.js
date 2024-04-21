@@ -1,4 +1,5 @@
-const db = require('../db')
+
+const db = require('../db/index')
 
 const indexController = {
     index: function (req, res) {
