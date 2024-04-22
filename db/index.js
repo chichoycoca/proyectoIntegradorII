@@ -1,4 +1,4 @@
-const db = {
+const data = {
     usuario:{
         1: {
         id: '1',
@@ -270,3 +270,5 @@ const db = {
             }]
         }]
 }
+
+module.exports = data;
