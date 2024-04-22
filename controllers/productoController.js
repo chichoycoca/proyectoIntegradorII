@@ -7,10 +7,12 @@ let productoController = {
         )}
 
     ,producto: function(req,res){
-        return res.render('product', {  data:db.producto   })
+        return res.render('product', {  data:db.producto, user: db.usuario   })
          }
     ,productAdd: function(req,res){
-        return res.render('product-add', {   nombre: db.usuario[1].email    })
+        return res.render('product-add', {   nombre: db.usuario[1].email,nombreDeUsuario: db.usuario[1].usuario
+            ,fotoDePerfil: db.usuario[1].fotoPerfil, email: db.usuario[1].email
+            ,data:db.producto    })
         }
         
         
