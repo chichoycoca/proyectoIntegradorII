@@ -43,7 +43,7 @@ const data = {
         contrasena: 'juan',
         fechaNacimiento: '02/05/2005',
         dni: '46649860',
-        fotoPerfil: 'foto'
+        fotoPerfil: '/images/images(1).jpeg'
         },
     },
 
