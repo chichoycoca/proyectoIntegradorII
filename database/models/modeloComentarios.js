@@ -21,4 +21,7 @@ module.exports = function(sequelize, dataTypes){
         timestamps: true,
         underscored: true
     }
+    const Comentario = sequelize.define(alias, cols , config);
+    return Comentario
 }
+
