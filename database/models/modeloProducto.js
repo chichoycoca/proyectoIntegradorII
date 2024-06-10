@@ -1,5 +1,3 @@
-const { type } = require("express/lib/response")
-
 module.exports = function(sequelize, dataTypes){
     let alias = "Producto"
     let cols = {
