@@ -23,7 +23,7 @@ let usuarioController = {
     },   
     store: function(req, res) {
         let form = req.body
-        res.send(form)
+        
             data.Usuario.create({
                 email: form.email,
                 usuario: form.usuario,
@@ -31,10 +31,10 @@ let usuarioController = {
                 fecha: form.fecha,
                 dni:form.dni,
                 fotodeperfil: form.fotodeperfil
-
             })
-            .then(function () {
-                return res.redirect("/register")
+            .then(function(user) {
+                // return res.send(user)
+                return res.redirect("/")
             })
             .catch(error=>console.log(error))}
          ,
