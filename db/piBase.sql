@@ -4,7 +4,8 @@ use proyectoint;
 create table usuarios(
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 email VARCHAR(50) NOT NULL,
-contraseña VARCHAR(50) NOT NULL,
+usuario VARCHAR(50) NOT NULL,
+contrasena VARCHAR(50) NOT NULL,
 fecha DATE NULL,
 dni INT UNIQUE NOT NULL,
 fotodeperfil VARCHAR(50) NOT NULL,
@@ -41,12 +42,12 @@ FOREIGN KEY (id_user) REFERENCES usuarios(id)
 
 
 SELECT * FROM usuarios;
-INSERT INTO usuarios(id, email, contraseña, fecha, dni, fotodeperfil, createdAt,updatedAt,deletedAt)
-values (DEFAULT,"simocahn@gmail.com","simon","2020-05-02",46649856,"default-image.png", NULL,NULL,NULL),
-(DEFAULT,"matiasvb@gmail.com","matias","2020-05-02",46649857,"default-image.png", NULL,NULL,NULL),
-(DEFAULT,"bautip@gmail.com","bauti","2020-05-02",46649858,"default-image.png", NULL,NULL,NULL),
-(DEFAULT,"tomyc@gmail.com","tomi","2020-05-02",46649859,"default-image.png", NULL,NULL,NULL),
-(DEFAULT,"juanf@gmail.com","juan","2020-05-02",46649860,"default-image.png", NULL,NULL,NULL);
+INSERT INTO usuarios(id, email, usuario, contrasena, fecha, dni, fotodeperfil, createdAt,updatedAt,deletedAt)
+values (DEFAULT,"simocahn@gmail.com","simon","simon","2020-05-02",46649856,"default-image.png", NULL,NULL,NULL),
+(DEFAULT,"matiasvb@gmail.com","matias","simon","2020-05-02",46649857,"default-image.png", NULL,NULL,NULL),
+(DEFAULT,"bautip@gmail.com","bauti","simon","2020-05-02",46649858,"default-image.png", NULL,NULL,NULL),
+(DEFAULT,"tomyc@gmail.com","tomi","simon","2020-05-02",46649859,"default-image.png", NULL,NULL,NULL),
+(DEFAULT,"juanf@gmail.com","juan","simon","2020-05-02",46649860,"default-image.png", NULL,NULL,NULL);
  
  SELECT * FROM productos;
  INSERT INTO productos(id,imagen_producto,producto,descripcion,createdAt,updatedAt,deletedAt,cliente_id)
