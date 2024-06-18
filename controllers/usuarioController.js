@@ -40,20 +40,23 @@ const usuarioController = {
          ,
 
     login: function (req,res) {
-        data.User.findOne({
+        let errors = validationResult(req);
+        if (errors.isEmpty()){
+            
+        
+        data.Usuario.findOne({
             where: [{email:req.body.email}]
         })
         .then(function(userEncontrado){
-            req.sesion.usuario = {
-                email: userEncontrado.email,
-                userName: userEncontrado.name,
+            if(!userEncontrado){
+                return res.send("Not found");
             }
-            if(req.body.recordar != undefinded){
-                res.cookie('cookieEspecial','el dato que quiero guardar', {maxAge: 1000*60*123123123})
-            }
+                if(req.body.recordarme != undefinded){
+                res.cookie('usuarioLogeado',userEncontrado, {maxAge: 1000*60*600})
+                }
         })
         
-    }
+    }}
             }
     
 module.exports = usuarioController
