@@ -1,7 +1,7 @@
 const db = require('../db/index')
 const data = require("../database/models")
 
-let usuarioController = {
+const usuarioController = {
     login: function (req, res) {
         return res.render('login', {})
     },
@@ -39,11 +39,21 @@ let usuarioController = {
             .catch(error=>console.log(error))}
          ,
 
-            
-            
-
-            
+    login: function (req,res) {
+        data.User.findOne({
+            where: [{email:req.body.email}]
+        })
+        .then(function(userEncontrado){
+            req.sesion.usuario = {
+                email: userEncontrado.email,
+                userName: userEncontrado.name,
+            }
+            if(req.body.recordar != undefinded){
+                res.cookie('cookieEspecial','el dato que quiero guardar', {maxAge: 1000*60*123123123})
+            }
+        })
         
-        }
+    }
+            }
     
 module.exports = usuarioController

@@ -8,13 +8,11 @@
 		</div>
 		<!-- Show the "ultimos" products -->
 		<h2 class="col-12"> 
-			<form class="form-login" action="" method="get">
-				<label for="email">Usuario:</label>
-				<input type="email" placeholder="pcv@udesa.edu.ar" required><br><br>
-				<label for="pass">Contraseña:</label>
-				<input type="password" placeholder="*******" required><br><br>
-				<label for="recordar">Recordame:</label>
+			<form class="form-login" action="/usuario/login" method="post">
+				<input type="email" placeholder="Email" required><br><br>
+				<input type="password" placeholder="Password" required><br><br>
 				<input type="checkbox"  required><br><br>
+				<label for="recordar">Recordame:</label>
 				<button type="submit" >Enviar</button>
 
 			</form>

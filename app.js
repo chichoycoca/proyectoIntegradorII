@@ -8,7 +8,6 @@ var indexRouter = require('./routes/index');
 var usuarioRouter = require('./routes/usuarioRouter');
 let productoRouter = require ('./routes/productoRouter');
 
-
 var app = express();
 
 // view engine setup
