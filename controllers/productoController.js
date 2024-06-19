@@ -13,7 +13,23 @@ let productoController = {
         return res.render('product-add', {   nombre: db.usuario[1].email,nombreDeUsuario: db.usuario[1].usuario
             ,fotoDePerfil: db.usuario[1].fotoPerfil, email: db.usuario[1].email
             ,data:db.producto    })
+        },
+    buscador: function(req,res){
+        let query = req.query.search
+        db.modeloProducto.findAll(
+        {
+
+        where: {
+            [op.or] : [
+                {producto : {[op.like]: `%${query}%`}},
+                {descripcion : {[op.like]: `%${query}%`}},
+            ]}
+
+
         }
+
+        )}
+        
         
         
        
