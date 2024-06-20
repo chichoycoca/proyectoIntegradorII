@@ -5,6 +5,6 @@ const data= require('../db/index')
 
 router.get('/', productoController.producto);
 router.get('/add', productoController.productAdd);
-
+router.get('/buscar', productoController.buscador)
 
 module.exports = router;

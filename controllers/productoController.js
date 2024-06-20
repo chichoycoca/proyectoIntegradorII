@@ -1,5 +1,8 @@
 
-const db= require("../db/index")
+const db = require("../db/index")
+const data = require ('../database/models')
+let op = data.Sequelize.Op;
+
 
 let productoController = {
     index: function (req,res) {
@@ -16,7 +19,7 @@ let productoController = {
         },
     buscador: function(req,res){
         let srch = req.query.search
-        db.Producto.findAll(
+        data.Producto.findAll(
         {
         where: {
             [op.or] : [
