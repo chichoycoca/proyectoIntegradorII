@@ -15,20 +15,25 @@ let productoController = {
             ,data:db.producto    })
         },
     buscador: function(req,res){
-        let query = req.query.search
-        db.modeloProducto.findAll(
+        let srch = req.query.search
+        db.Producto.findAll(
         {
-
         where: {
             [op.or] : [
-                {producto : {[op.like]: `%${query}%`}},
-                {descripcion : {[op.like]: `%${query}%`}},
+                {producto : {[op.like]: `%${srch}%`}},
+                {descripcion : {[op.like]: `%${srch}%`}},
             ]}
-
-
         }
+        )
+        .then(resultados => {
+            res.render('search-results', {
+                productos: resultados,
+                query: srch
+            });
+        })
+    }
+        
 
-        )}
         
         
         
