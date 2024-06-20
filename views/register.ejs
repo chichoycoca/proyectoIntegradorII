@@ -5,16 +5,25 @@
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Registrate</h2>
+				<% if (locals.errors){
+					errors.forEach(error => {	%>
+						<p> <%= error.msg %> </p> 
+					<%}) %>
+					 
+				<%	} %>
 			</div>
 			<!-- Show the "ultimos" products -->
+			
 			<h2 class="col-12"> 
-				<form class="form-register" action="/usuario/store" method="post">
+				<form class="form-register" action="/usuario/register" method="post">
 				<label for="email">Email:</label>
-				<input type="email" placeholder="pcv@udesa.edu.ar"  name="email"><br><br>
+				<input type="email" placeholder="pcv@udesa.edu.ar"  name="email" value="<%= locals.old !== undefined && old.email 	? old.email : "" %>"
+><br><br>
+			
 				<label for="user">Usuario:</label>
 				<input type="text" placeholder="PCVcamisetas"name= "usuario" ><br><br>
 				<label for="pass">Contraseña:</label>
-				<input type="password" placeholder="*******" name = "contrasena"><br><br>
+				<input type="password" placeholder="*******" name = "contrasena"value="<%= locals.old !== undefined && old.contrasena	? old.contrasena : "" %>"><br><br>
 				<label for="fecha-nacimiento">Fecha De Nacimiento:</label>
 				<input type="date" name="fecha" ><br><br>
 				<label for="documento">Documento:</label>
@@ -25,5 +34,7 @@
 
 			</form>
 			</h2>
+			
+			
 
 <%- include('./partials/footer') %>

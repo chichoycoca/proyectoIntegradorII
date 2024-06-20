@@ -22,13 +22,10 @@ const usuarioController = {
         return res.render('register')
     },   
     store: function(req, res) {
-        let form = req.body
+        
         let errors = validationResult(req);
         if (errors.isEmpty()){
-            
-        }
-        
-        
+            let form = req.body
             data.Usuario.create({
                 email: form.email,
                 usuario: form.usuario,
@@ -42,7 +39,10 @@ const usuarioController = {
                 return res.redirect("/")
             })
             .catch(error=>console.log(error))
-
+        } else{
+            
+            res.render('register', {errors:errors.array(), old: req.body});
+        }
         },
 
     login: function (req,res) {

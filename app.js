@@ -20,13 +20,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/usuario', usuarioRouter);
-app.use('/producto', productoRouter);
-
 app.use(session({
-  secret:"",
+  secret:"cualquiera",
   resave:false,
   saveUninitialized:true
 }));
@@ -35,6 +30,13 @@ app.use(function (req,res,next) {
       res.locals.cookies = req.cookies;
     next();
 })
+
+
+app.use('/', indexRouter);
+app.use('/usuario', usuarioRouter);
+app.use('/producto', productoRouter);
+
+
 
 
 // catch 404 and forward to error handler
