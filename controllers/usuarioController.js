@@ -58,7 +58,7 @@ let usuarioController = {
                 if (bcrypt.compareSync(bd.contrasena, userEncontrado.contrasena)) {
                     if (req.body.recordarme !== undefined) {
                         console.log(userEncontrado.contrasena)
-                      res.cookie("usuarioLogueado", usuario, { maxAge: 1000 * 60 * 500 });
+                      res.cookie("usuarioLogueado", userEncontrado, { maxAge: 1000 * 60 * 500 });
                     } else {
                       req.session.userSession = usuario;
                     }
