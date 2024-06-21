@@ -5,16 +5,23 @@
 	<div class="row">
 		<div class="col-12">
 			<h2 class="products-title">Agregar productos</h2>
+			<% if (locals.errors){
+				errors.forEach(error => {	%>
+					<p> <%= error.msg %> </p> 
+				<%}) %>
+				 
+			<%	} %>
+			
 		</div>
 		<!-- Show the "ultimos" products -->
 		<h2 class="col-12">
-			<form class="form-add-product" action="" method="get">
+			<form class="form-add-product" action="/producto/add" method="post">
 				<label for="fotoProductoNuevo">Imagen del producto:</label>
-				<input type="file" placeholder="ingresar archivo.jpg" required><br><br>
+				<input type="text" placeholder="ingresar archivo.jpg"  name="imagen_producto"><br><br>
 				<label for="nombreProductoNuevo">Nombre del producto:</label>
-				<input type="text" placeholder="Producto" required><br><br>
+				<input type="text" placeholder="Producto" name="producto" ><br><br>
 				<label for="descripcionProductoNuevo">Descripción:</label>
-				<input type="text" placeholder="Descripción del producto" required><br><br>
+				<input type="text" placeholder="Descripción del producto" name="descripcion"><br><br>
 				<button type="submit" >Enviar</button>
 
 			</form>
