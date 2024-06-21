@@ -45,7 +45,7 @@ const usuarioController = {
         }
         },
 
-    login: function (req,res) {
+    loginproceso: function (req,res) {
         let errors = validationResult(req);
         if (errors.isEmpty()){
             
@@ -62,6 +62,10 @@ const usuarioController = {
                 }
         })
         
-    }}
+    }else{
+            
+        res.render('login', {errors:errors.array(), old: req.body});
+    }
+}
 }    
 module.exports = usuarioController

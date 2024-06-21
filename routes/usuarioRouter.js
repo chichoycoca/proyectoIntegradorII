@@ -5,7 +5,7 @@ const usuarioController = require('../controllers/usuarioController')
 
 let registerValidations = [
     body("email")
-        .notEmpty().withMessage("Por favor completa con el email").bail()
+        .notEmpty().withMessage("Por favor completa con el email")
         
     ,body("contrasena")
         .notEmpty().withMessage("Por favor completa con la contraseña")
@@ -20,6 +20,6 @@ router.get('/profile-edit', usuarioController.profileEdit);
 router.get('/register',usuarioController.register);
 router.post('/register', registerValidations,usuarioController.store);
 
-router.post('/login', usuarioController.login);
+router.post('/login', usuarioController.loginproceso);
 
 module.exports = router;
