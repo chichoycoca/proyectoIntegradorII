@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let { body } = require("express-validator");
-const usuarioController = require('../controllers/usuarioController')
+const usuarioController = require('../controllers/usuarioController');
 
 let registerValidations = [
     body("email")
@@ -12,7 +12,12 @@ let registerValidations = [
         .isLength({ min: 4 }).withMessage('La contraseña debe tener al menos 4 caracteres')
 
 ];
-
+let loginValidations = [
+    body("email")
+      .notEmpty().withMessage("Email incompleto").bail()
+      .isEmail().withMessage("Ingrese un email correcto"),
+    body("contrasena").notEmpty().withMessage("Campo contraseña incompleto"),
+  ];
 
 router.get('/login', usuarioController.login);
 router.get('/profile', usuarioController.profile);
