@@ -25,6 +25,6 @@ router.get('/profile-edit', usuarioController.profileEdit);
 router.get('/register',usuarioController.register);
 router.post('/register', registerValidations,usuarioController.store);
 
-router.post('/login', usuarioController.loginproceso);
+router.post('/login', loginValidations, usuarioController.loginproceso);
 
 module.exports = router;

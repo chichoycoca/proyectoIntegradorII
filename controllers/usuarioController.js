@@ -50,21 +50,29 @@ let usuarioController = {
         
         if (errors.isEmpty()){
             let bd = req.body;
-            console.log(req.body)
             data.Usuario.findOne({where: {email:bd.email}})
             .then(function(userEncontrado){
                 if(!userEncontrado){
                     return res.send("Not found");
                 }
-                    if(req.body.recordarme !== undefinded){
-                    res.cookie('usuarioLogeado',userEncontrado, {maxAge: 1000*60*600})
+                if (bcrypt.compareSync(bd.contrasena, userEncontrado.contrasena)) {
+                    if (req.body.recordarme !== undefined) {
+                        console.log(userEncontrado.contrasena)
+                      res.cookie("usuarioLogueado", usuario, { maxAge: 1000 * 60 * 500 });
+                    } else {
+                      req.session.userSession = usuario;
                     }
-        })
-        
-    }else{
-            
-        res.render('login', {errors:errors.array(), old: req.body});
+                    return res.redirect("/");
+                  } else {
+                    return res.send("No coinciden contraseñas");
+                  }
+                })
+                .catch(function (error) {
+                  console.log(error);
+                });
+            } else {
+              return res.render("login", { errors: errors.array(), old: req.body });
+            }
     }
-}
 }    
 module.exports = usuarioController
