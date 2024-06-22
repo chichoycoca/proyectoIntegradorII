@@ -1,5 +1,9 @@
 <%- include('./partials/head') %>
-<%- include('./partials/header') %>
+<% if (cookies.usuarioLogueado !== undefined || locals.userSession !== undefined) { %>
+	<%- include('./partials/headerLogueado') %>
+<% } else { %>
+	<%- include('./partials/header') %>
+<% } %>
 
 
 <div class="container products-wrapper">
