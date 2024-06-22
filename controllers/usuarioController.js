@@ -73,6 +73,12 @@ let usuarioController = {
             } else {
               return res.render("login", { errors: errors.array(), old: req.body });
             }
+    },
+    logout: function (req, res) {
+        req.session.destroy()
+        res.clearCookie("usuarioLogueado");
+        return res.redirect("/");
     }
+
 }    
 module.exports = usuarioController
