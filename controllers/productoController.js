@@ -13,9 +13,12 @@ let productoController = {
         return res.render('product', {  data:db.producto, user: db.usuario   })
          }
     ,productAdd: function(req,res){
-        return res.render('product-add', {   nombre: db.usuario[1].email,nombreDeUsuario: db.usuario[1].usuario
-            ,fotoDePerfil: db.usuario[1].fotoPerfil, email: db.usuario[1].email
-            ,data:db.producto    })
+        if (req.cookies.usuarioLogueado !== undefined){
+            return res.render('product-add')
+        }else{
+            return res.redirect('/usuario/login')
+        }
+        
         },
     buscador: function(req,res){
         let srch = req.query.search
