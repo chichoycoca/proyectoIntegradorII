@@ -9,6 +9,7 @@ let usuarioRouter = require('./routes/usuarioRouter');
 let productoRouter = require ('./routes/productoRouter');
 const session = require('express-session');
 
+
 var app = express();
 
 // view engine setup
@@ -35,6 +36,7 @@ app.use(function (req,res,next) {
 app.use('/', indexRouter);
 app.use('/usuario', usuarioRouter);
 app.use('/producto', productoRouter);
+
 
 
 

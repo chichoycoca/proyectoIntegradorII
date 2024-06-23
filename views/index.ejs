@@ -20,61 +20,29 @@
 				<h2 class="products-title">Novedades</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/producto">
-						<figure class="product-box_image">
-							<img src="images/products/inter-dragon.jpg" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Inter Dragon 2009</h2>
-							<p>Camiseta del inter de milan 09/10</p>
-							<p>Comentarios: 3</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/producto">
-						<figure class="product-box_image">
-							<img src="images/products/arsenal.jpg" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Arenal 2005</h2>
-							<p>Camiseta Arsenal 05/06</p>
-							<p>Comentarios: 3</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/producto">
-						<figure class="product-box_image">
-							<img src="images/products/barca.jpg" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Barca 2024</h2>
-							<p>Camiseta Barcelona 23/24</p>
-							<p>Comentarios: 3</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/producto">
-						<figure class="product-box_image">
-							<img src="images/products/rm.jpg" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Real Madrid 2017</h2>
-							<p>Camiseta Real Madrid 17/18</p>
-							<p>Comentarios: 3</p>
-						</article>
-					</a>
-				</section>
+				<% productos.forEach((product, index) => { %>
+				<% if (index < 4) { %>
+					<div class="col-12 col-md-6 col-lg-3 ">
+						<section class="product-box">
+							<a href="/producto">
+								<figure class="product-box_image">
+								<img src="/images/products/<%= product.imagen_producto %>" alt="<%= product.producto %>" class="product-img">
+								</figure>
+								<article class="product-box_data">
+									<h3 class="product-name"><%= product.producto %></h3>
+									<p class="product-description"><%= product.descripcion %></p>
+									
+									<% if (product.usuario && product.usuario.usuario) { %>
+										<p class="product-user">Publicacion de: <a href="/usuario/profile/<%= product.usuario.id %>"><%= product.usuario.usuario %></a></p>
+									<% } else { %>
+										<p class="product-user">Publicacion de: Usuario Anonimo</p>
+									<% } %>
+									</article>
+							</a>
+						</section>
+					</div>
+				<% } %>
+				<% }); %>
 			</div>
 		</div>
 	</div>

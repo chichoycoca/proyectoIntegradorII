@@ -1,17 +1,31 @@
 
 const db = require("../db/index")
 const data = require ('../database/models')
-let op = data.Sequelize.Op;
 let {validationResult, cookie} = require("express-validator")
 
 let productoController = {
     index: function (req,res) {
-        return res.render("index", {index:db.producto}
-        )}
+        data.Producto.findAll({
+            include: [{
+            model : data.Usuario,
+            as : 'usuario'
+            }],
+            order: [['createdAt', 'DESC']],
+            limit : 5
+        })
+        .then(productos => {
+            console.log(productos);
+            res.render('index', {productos: productos} );
+        })
+        .catch(error => {
+            console.error(error);
+            res.status(500).send('Error del servidor');
+        });
+    }
 
     ,producto: function(req,res){
         return res.render('product', {  data:db.producto, user: db.usuario   })
-         }
+    }
     ,productAdd: function(req,res){
         if (req.cookies.usuarioLogueado !== undefined){
             return res.render('product-add')
@@ -45,7 +59,8 @@ let productoController = {
         data.Producto.create({
             imagen_producto: form.imagen_producto,
             producto: form.producto,
-            descripcion: form.descripcion
+            descripcion: form.descripcion,
+            id_user : form.id,
         
         }).then(function(producto) {
          return res.redirect("/")
