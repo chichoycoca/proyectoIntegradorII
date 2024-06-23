@@ -8,10 +8,17 @@ let usuarioController = {
         return res.render('login', {})
     },
     profile: function (req, res) {
-        return res.render('profile', {nombreDeUsuario: db.usuario[1].usuario
-            ,fotoDePerfil: db.usuario[1].fotoPerfil, email: db.usuario[1].email
-            ,data:db.producto}
-    )
+        const idusuario = req.params.id;
+        db.Usuario.findOne({
+            where :{id : idusuario},
+            include: [{
+                association: 'productos' 
+            },
+        ]
+        })
+        .then(function(data) {
+                res.render('profile', {info : data})
+        })
     },
     profileEdit: function (req, res) {
         return res.render('profile-edit', {nombreDeUsuario: db.usuario[1].usuario

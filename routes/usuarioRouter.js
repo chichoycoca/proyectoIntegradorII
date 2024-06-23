@@ -20,7 +20,7 @@ let loginValidations = [
   ];
 
 router.get('/login', usuarioController.login);
-router.get('/profile', usuarioController.profile);
+router.get('/profile/:id', usuarioController.profile);
 router.get('/profile-edit', usuarioController.profileEdit);
 router.get('/register',usuarioController.register);
 router.post('/register', registerValidations,usuarioController.store);
