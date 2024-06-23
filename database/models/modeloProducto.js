@@ -15,7 +15,7 @@ module.exports = function(sequelize, dataTypes){
         descripcion:{
             type: dataTypes.STRING
         },
-        cliente_id:{
+        id_user:{
             type: dataTypes.INTEGER
         }
          
@@ -35,7 +35,7 @@ module.exports = function(sequelize, dataTypes){
         })
         Producto.hasMany(models.Comentario, {
             as: 'comentarios',
-            foreignKey: 'cliente_id'
+            foreignKey: 'id_productos'
         });
     }
 

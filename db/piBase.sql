@@ -22,8 +22,8 @@ descripcion VARCHAR(100) NOT NULL,
 createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
-cliente_id INT UNSIGNED,
-FOREIGN KEY (cliente_id) REFERENCES usuarios(id)
+id_user INT UNSIGNED,
+FOREIGN KEY (id_user) REFERENCES usuarios(id)
 );
 
 
@@ -50,7 +50,7 @@ values (DEFAULT,"simocahn@gmail.com","simon","simon","2020-05-02",46649856,"defa
 (DEFAULT,"juanf@gmail.com","juan","simon","2020-05-02",46649860,"default-image.png", NULL,NULL,NULL);
  
  SELECT * FROM productos;
- INSERT INTO productos(id,imagen_producto,producto,descripcion,createdAt,updatedAt,deletedAt,cliente_id)
+ INSERT INTO productos(id,imagen_producto,producto,descripcion,createdAt,updatedAt,deletedAt,id_user)
  VALUES (DEFAULT, "inter.jpg", "Inter Dragon 2009", "Camiseta Del Inter De Milan 09/10", NULL, NULL, NULL, 1),
  (DEFAULT, "arsenal.jpg", "Arsenal 2005", "Camiseta Del Arsenal 05/06", NULL, NULL, NULL, 2),
  (DEFAULT, "barca.jpg", "Barca 2024", "Camiseta Del Barcelona 23/24", NULL, NULL, NULL, 3),

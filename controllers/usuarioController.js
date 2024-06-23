@@ -9,7 +9,7 @@ let usuarioController = {
     },
     profile: function (req, res) {
         const idusuario = req.params.id;
-        db.Usuario.findOne({
+        data.Usuario.findOne({
             where :{id : idusuario},
             include: [{
                 association: 'productos' 
