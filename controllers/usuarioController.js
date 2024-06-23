@@ -2,23 +2,39 @@ const db = require('../db/index')
 const data = require("../database/models")
 let bcrypt = require("bcryptjs")
 let {validationResult, cookie} = require("express-validator")
+const { Association } = require('sequelize')
 
 let usuarioController = {
     login: function (req, res) {
         return res.render('login', {})
     },
     profile: function (req, res) {
-        const idusuario = req.params.id;
-        data.Usuario.findOne({
-            where :{id : idusuario},
+        const idUsuario = req.params.id;
+        data.Usuario.findByPk(idUsuario, {
             include: [{
-                association: 'productos' 
+                model : data.Producto,
+                as: 'productos' 
             },
         ]
         })
-        .then(function(data) {
-                res.render('profile', {info : data})
-        })
+        .then(usuario => {
+            if (!usuario){
+                return res.status(404).send("User not found");
+            }
+            
+            const productos = usuario.productos;
+            const cantidadProductos = productos.length;
+            
+
+            return res.render("profile",{
+                user : usuario.usuario,
+                fotoDePerfil : usuario.fotodeperfil,
+                email: usuario.email,
+                cantidadProductos : cantidadProductos,
+
+            })
+        
+        });
     },
     profileEdit: function (req, res) {
         return res.render('profile-edit', {nombreDeUsuario: db.usuario[1].usuario

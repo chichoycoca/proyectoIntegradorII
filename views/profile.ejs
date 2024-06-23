@@ -8,11 +8,11 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="<%= fotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
+				<img src="/images/users/<%= fotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"><%= nombreDeUsuario %>
+					<h1 class="main-title"><%= user %>
 						<a href="/usuario/profile-edit">
 							<i class="fas fa-cog"></i>
 						</a>
@@ -21,8 +21,8 @@
 				</div>
 				<div>
 					<ul class="">
-						<li><%= info.email %></li>
-						<li>8 productos</li>
+						<li><%= email %></li>
+						<li><%= cantidadProductos %> Productos</li>
 						<li>200 seguidores</li>
 						<li>300 comentarios</li>
 					</ul>
@@ -95,7 +95,7 @@
 					</a>
 				</section>
 			</div>
-			
+	
 		</div>
 	</div>
 	<!-- /Mis productos -->
