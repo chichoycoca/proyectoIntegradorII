@@ -34,17 +34,20 @@ module.exports = function(sequelize, dataTypes){
     const Usuario = sequelize.define(alias, cols, config);
 
 
-   /* Usuario.associate = function (models) {
+   Usuario.associate = function (models) {
         Usuario.hasMany(models.Producto, {
             as: 'productos',
-            foreignKey: 'id_user'
+            foreignKey: 'id_user',
+            timestamps: false
         });
         Usuario.hasMany(models.Comentario, {
             as: 'comentarios',
-            foreignKey: 'id_user'
-        });  */
+            foreignKey: 'id_user',
+            timestamps: false
+        });  
+    }
 
 
 return Usuario
-}//}
+}
 

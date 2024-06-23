@@ -27,7 +27,7 @@ module.exports = function(sequelize, dataTypes){
     }
     const Producto = sequelize.define(alias, cols, config);
 
-  /*  Producto.associate = function(models){
+    Producto.associate = function(models){
 
         Producto.belongsTo(models.Usuario, {
         as : 'usuario',
@@ -36,10 +36,11 @@ module.exports = function(sequelize, dataTypes){
         Producto.hasMany(models.Comentario, {
             as: 'comentarios',
             foreignKey: 'cliente_id'
-        });*/
+        });
+    }
 
 return Producto
 
 
-}//}
+}
 
