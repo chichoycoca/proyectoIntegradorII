@@ -8,10 +8,12 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= producto.producto %> </h2> 
-			
-			<% if (producto.usuario.email !== cookies.usuarioLogueado.id) { %>
-				<p class="product-detail-description" > Publicado por: <%= producto.usuario.email %></p>
-			<% }%>
+			<% if (cookies.usuarioLogueado !== undefined){ %>
+                <<% if (producto.usuario.email !== cookies.usuarioLogueado.id) { %>
+					<p class="product-detail-description" > Publicado por: <%= producto.usuario.email %></p>
+				<% }%>
+				<% }%>
+
 			<p class="product-detail-description">
 					
 				<a href="http://localhost:3000/producto/editProduct/<%= producto.id %>/<%producto.id_user%>">Editar</a>

@@ -22,24 +22,23 @@ let usuarioController = {
                 return res.status(404).send("User not found");
             }
             
-            const productos = usuario.productos;
-            const cantidadProductos = productos.length;
-            
+
 
             return res.render("profile",{
                 user : usuario.usuario,
                 fotoDePerfil : usuario.fotodeperfil,
                 email: usuario.email,
-                cantidadProductos : cantidadProductos,
+                cantidadProductos : usuario.productos.length,
+                id : usuario.id,
+                productos : usuario.productos,
+                imagen_producto : usuario.productos.imagen_producto
 
             })
         
         });
     },
     profileEdit: function (req, res) {
-        return res.render('profile-edit', {nombreDeUsuario: db.usuario[1].usuario
-            ,fotoDePerfil: db.usuario[1].fotoPerfil, email: db.usuario[1].email
-            ,data:db.producto})
+        return res.render('profile-edit')
     },
     register: function (req, res) {
         return res.render('register')

@@ -12,7 +12,7 @@ let crearProductoValidations=[
 
 
 
-
+router.get("/", productoController.index);
 router.get('/add', productoController.productAdd);
 router.get('/buscar', productoController.buscador)
 router.post('/add',crearProductoValidations, productoController.crearProducto)

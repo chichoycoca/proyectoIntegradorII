@@ -33,7 +33,21 @@
 	<!-- /Datos del usuario -->
 
 	<!-- Mis productos -->
-	
+	<section class="container products-wrapper">
+        <div class="row">
+            <% productos.forEach(producto => { %>
+                <div class="col-12 col-md-4">
+                    <div class="product-box">
+                        <a href="/producto/<%= producto.id %>">
+                            <img src="/images/products/<%= producto.imagen_producto %>" alt="<%= producto.producto %>">
+                            <h3><%= producto.producto %></h3>
+                        </a>
+                        <p><%= producto.descripcion %></p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
 	<!-- /Mis productos -->
 
 <%- include('./partials/footer') %>
