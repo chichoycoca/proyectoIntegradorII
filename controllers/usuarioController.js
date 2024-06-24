@@ -49,9 +49,14 @@ let usuarioController = {
             contrasena: bcrypt.hashSync(form.contrasena, 10), 
             fecha: form.fecha,
             dni:form.dni,
-            id : id
 
-        }).then(function (edit) {
+        },
+        {
+            where: {
+                id:id
+            }
+        }
+    ).then(function (edit) {
             return res.redirect("/")})
 
             
