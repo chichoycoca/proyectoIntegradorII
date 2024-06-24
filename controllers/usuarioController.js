@@ -5,9 +5,6 @@ let {validationResult, cookie} = require("express-validator")
 const { Association } = require('sequelize')
 
 let usuarioController = {
-    login: function (req, res) {
-        return res.render('login', {})
-    },
     profile: function (req, res) {
         const idUsuario = req.params.id;
         data.Usuario.findByPk(idUsuario, {
@@ -60,10 +57,21 @@ let usuarioController = {
             return res.redirect("/")})
 
             
-    },
+    },  
     register: function (req, res) {
-        return res.render('register')
-    },   
+        //solo sirve para mostrar la vista
+        if (req.cookies.usuarioLogueado || req.session.userSession) {
+          return res.status(404).send("Ya estas registrado");
+        } else {return res.render("register", {})}
+      },
+      
+      login: function (req, res) {
+        if (req.cookies.usuarioLogueado){
+          return res.status(404).send("Ya iniciaste sesión");
+        } else {return res.render("login", {})}
+      },
+    
+    
     store: function(req, res) {
         
         let errors = validationResult(req);
