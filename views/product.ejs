@@ -7,7 +7,7 @@
 	
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title">San Lorenzo 2021</h2> 
+			<h2 class="products-title"><%= producto.producto %> </h2> 
 			<p class="product-detail-description">
 				<a href="/producto/add">Editar</a>
 			</p>
@@ -15,37 +15,37 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="./images/products/casla.jpg" alt="" class="product-detail-img">
+					<img src="/images/products/casla.jpg" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						Camiseta De San Lorenzo De Almagro 21/22</p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<article>
-							<img src="<%= user[3].fotoPerfil %>" alt="">
+							<img src="<%= //user[3].fotoPerfil %>" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/usuario/profile"><%= user[3].usuario %></a> </strong>
-								<%= data[0].comentarios[0].texto %></p>
+								<strong> <a href="/usuario/profile"><%=// user[3].usuario %></a> </strong>
+								<%= //data[0].comentarios[0].texto %></p>
 								
 									
 								
 							</div>
 						</article>
 						<article>
-							<img src="<%= user[2].fotoPerfil %>" alt="">
+							<img src="<%= //user[2].fotoPerfil %>" alt="">
 							<div class="data">
 								<p class="user">
-									<strong> <a href="/usuario/profile"><%= user[2].usuario %></a> </strong>
-									<%= data[0].comentarios[1].texto %></p>
+									<strong> <a href="/usuario/profile"><%=// user[2].usuario %></a> </strong>
+									<%= //data[0].comentarios[1].texto %></p>
 							</div>
 						</article>
 						<article>
-							<img src="<%= user[1].fotoPerfil %>" alt="">
+							<img src="<%= //user[1].fotoPerfil %>" alt="">
 							<div class="data">
 								<p class="user">
-									<strong> <a href="/usuario/profile"><%= user[1].usuario %></a> </strong>
-									<%= data[0].comentarios[2].texto %>
+									<strong> <a href="/usuario/profile"><%=// user[1].usuario %></a> </strong>
+									<%= //data[0].comentarios[2].texto %>
 									</p>
 							</div>
 						</article>

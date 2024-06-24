@@ -23,8 +23,21 @@ let productoController = {
         });
     }
 
-    ,producto: function(req,res){
-        return res.render('product', {  data:db.producto, user: db.usuario   })
+    ,detalleProducto: function(req,res){
+       let idProducto = req.params.id
+       data.Producto.findByPk(idProducto, {
+        include:[{ association: 'usuario'},{association: "comentarios", include: [{association:'usuario'}]}
+
+        ]
+
+       })
+       .then(function(productos) {
+        
+        return res.render('product', { producto: productos})
+       })    
+       
+       //return res.render('product', {  data:db.producto, user: db.usuario   })
+    
     }
     ,productAdd: function(req,res){
         if (req.cookies.usuarioLogueado !== undefined){
@@ -60,7 +73,7 @@ let productoController = {
             imagen_producto: form.imagen_producto,
             producto: form.producto,
             descripcion: form.descripcion,
-            id_user : form.id,
+            id_user : req.cookies.usuarioLogueado.id,
         
         }).then(function(producto) {
          return res.redirect("/")
@@ -69,7 +82,6 @@ let productoController = {
     }else
     res.render('product-add',{errors:errors.array(), old: req.body})
     
-
     }
 
         
