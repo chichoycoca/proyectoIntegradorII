@@ -19,4 +19,5 @@ router.post('/add',crearProductoValidations, productoController.crearProducto);
 router.get("/editProduct/:id_product/:id_user", productoController.editProducto);
 router.post("/editedProduct/:id_product", crearProductoValidations, productoController.editedProducto);
 router.get('/:id', productoController.detalleProducto);
+router.post('/borradoProducto', productoController.borradoProducto)
 module.exports = router;

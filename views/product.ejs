@@ -13,6 +13,10 @@
 					<p class="product-detail-description" > Publicado por: <a href="/usuario/profile/<%= producto.usuario.id %>"><%= producto.usuario.usuario %></a></p>
 				<% }%>
 				<% }%>
+				<form action="/producto/borradoProducto" method="post">
+					<input type="hidden" name="id" value="">
+					<button type="submit">Borrar el producto</button>
+				</form>
 
 			<p class="product-detail-description">
 					
@@ -25,9 +29,11 @@
 					<img src="/images/products/<%= producto.imagen_producto %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						<%= producto.descripcion %></p>
+						
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
+
 						<% for (let i = 0; i < producto.comentarios.length; i++) { %>
 							<article>
 								<a href="/usuario/profile/<%= producto.comentarios[i].id_user %>"><img src="/images/users/<%= producto.comentarios[i].usuario.fotodeperfil %>" alt=""></a>
@@ -43,6 +49,7 @@
 						<% } %>
 
 					</section>
+					
 					<form class="form" action="" method="get">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>

@@ -155,6 +155,15 @@ let productoController = {
             res.status(500).send('Error interno del servidor');
         });
         }
+    },
+    borradoProducto: function(req,res){
+        let id = req.body.id;
+    let filtro = {where: [{id: id}]}
+    data.Producto.destroy(filtro)
+    .then(function (result) {
+        
+        return res.redirect('/')
+    }).catch()
     }
 
 
