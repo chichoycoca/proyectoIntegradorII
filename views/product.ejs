@@ -9,20 +9,21 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= producto.producto %> </h2> 
 			<p class="product-detail-description">
+					<%  //condicional para que solo si es tu producto se pueda editar%>
 				<a href="/producto/add">Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="/images/products/casla.jpg" alt="" class="product-detail-img">
+					<img src="/images/products/<%= producto.imagen_producto %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						Camiseta De San Lorenzo De Almagro 21/22</p>
+						<%= producto.descripcion %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<article>
-							<img src="<%= //user[3].fotoPerfil %>" alt="">
+							<img src="<%=  %>" alt="">
 							<div class="data">
 								<p class="user">
 								<strong> <a href="/usuario/profile"><%=// user[3].usuario %></a> </strong>
