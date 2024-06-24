@@ -1,7 +1,8 @@
 
 const db = require("../db/index")
 const data = require ('../database/models')
-let {validationResult, cookie} = require("express-validator")
+let {validationResult, cookie} = require("express-validator");
+const { where } = require("sequelize");
 const op = data.Sequelize.Op;
 
 
@@ -13,7 +14,7 @@ let productoController = {
             as : 'usuario'
             }],
             order: [['createdAt', 'DESC']],
-            limit : 5
+            limit : 15
         })
         .then(productos => {
             console.log(productos);
@@ -84,7 +85,80 @@ let productoController = {
     }else
     res.render('product-add',{errors:errors.array(), old: req.body})
     
+    },
+
+    editProducto: function(req,res){
+        const id_user = req.params.id_user;
+        const id_product = req.params.id_product;
+
+        data.Producto.findByPk(id_product, {
+            include: [{ model: data.Usuario, as: 'usuario' }]
+        })
+        .then(function(producto) {
+            if (!producto) {
+                return res.render('error', { 
+                    message: 'Product not found' });
+            }
+            
+            if (producto.id_user !== id_user) {
+                return res.status(403).send("No podes editar esta publicacion");
+            }
+            res.render('product-edit', { 
+                producto: producto,});
+        })
+        .catch(error => {
+            console.error(error);
+            res.status(500).send('Error interno del servidor');
+        });
+    },
+
+    editedProducto: function(req,res){
+        let errors = validationResult(req);
+        if (errors.isEmpty()){
+        let form = req.body;
+        const id_product = req.params.id_product;
+        const id_user = req.params.id_user;
+
+        data.Producto.update({
+            imagen_producto  : form.imagen_producto,
+            producto : form.producto,
+            descripcion : form.descripcion,
+            updatedAt : new Date(),
+        },{
+            where : { id : id_product}
+        })
+        .then(function(result){
+            return res.redirect(`/producto/:id`);
+        })
+        .catch(function(error) {
+            console.log(error); 
+            return res.status(500).send("Hubo un error al editar el producto"); 
+        });
+    } else { 
+        const id_user = req.params.id_user;
+        const id_product = req.params.id_product;
+    
+        data.Producto.findByPk(id_product, {
+            include: [{ model: data.Usuario, as: 'usuario' }]
+        })
+        .then(function(producto) {
+            if (!producto) {
+                return res.render('error', { message: 'Producto no encontrado' });
+            }
+            
+            if (producto.id_user !== id_user) {
+                return res.status(403).send("No tienes permiso para editar este producto");
+            }
+            res.render('product-edit', { producto: producto, errors: errors.array(), old: req.body });
+        })
+        .catch(function(error){
+            console.error(error);
+            res.status(500).send('Error interno del servidor');
+        });
+        }
     }
+
+
 
         
         

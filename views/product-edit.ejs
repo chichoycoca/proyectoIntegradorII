@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head') %>
+<body>
+    <%- include('./partials/headerLogueado') %>
+
+    <div class="container products-wrapper">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="products-title">Editar producto</h2>
+            </div>
+            <% if (locals.errors) { %> 
+                <% errors.forEach(error => { %>
+                    <p> <%= error.msg %></p>
+                <% }) %>
+            <% } %>
+
+            <form action="/producto/editProduct/<%=producto.id%>" method="POST" id="registro-form"> 
+                <div id="separador">
+                <label for="Imagen">Imagen del producto:</label>
+                <input type="text" id="imagen_producto" name="imagen_producto" class="form-input" value="default.jpg"><br>
+
+                <label for="producto"> Nombre del producto:</label>
+                <input type="text" id="producto" name="producto" class="form-input"><br>
+
+                <label for="descripcion"> Descripción:</label>
+                <input type="text" id="descripcionProducto" name="descripcion" class="form-input"><br>
+
+                <% let id_user = null; %>
+                    <% if (locals.cookies && locals.cookies.usuarioLogueado) { %>
+                        <% id_user = locals.cookies.usuarioLogueado.id; %>
+                    <% } else if (locals.userSession) { %>
+                        <% id_user = locals.userSession.id; %>
+                    <% } %>
+
+                    <% if (id_user) { %>
+                        <input type="hidden" name="id" value="<%= id_user %>">
+                    <% } %>
+            
+
+            </div>
+                <button type="submit" id="submit-btn">Agregar Producto</button>
+            </form>
+
+
+    <!-- footer -->
+    <%- include ('./partials/footer') %>
+    <!-- /footer -->
+</body>
+
+</html>
