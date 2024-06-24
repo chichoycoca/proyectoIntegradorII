@@ -21,7 +21,8 @@ let loginValidations = [
 
 router.get('/login', usuarioController.login);
 
-router.get('/profile-edit', usuarioController.profileEdit);
+router.get('/profile-edit/:id', usuarioController.profileEdit);
+router.post('/profile-edit/:id', usuarioController.procesadorProfileEdit);
 router.get('/register',usuarioController.register);
 router.post('/register', registerValidations,usuarioController.store);
 router.post('/logout', usuarioController.logout);

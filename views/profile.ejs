@@ -13,11 +13,14 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"><%= user %>
-						<a href="/usuario/profile-edit">
+						<% if(cookies.usuarioLogueado !== undefined){ %>
+						<% if(user == cookies.usuarioLogueado.usuario){%>
+						<a href="/usuario/profile-edit/<%=cookies.usuarioLogueado.id%>">
 							<i class="fas fa-cog"></i>
 						</a>
-					</h1>
-					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+					</h1><%} else{%>
+						<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+						<%}}%>
 				</div>
 				<div>
 					<ul class="">

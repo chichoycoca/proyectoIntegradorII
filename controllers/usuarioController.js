@@ -40,6 +40,22 @@ let usuarioController = {
     profileEdit: function (req, res) {
         return res.render('profile-edit')
     },
+    procesadorProfileEdit: function (req, res) {
+        let form = req.body
+        let id = req.params.id
+        data.Usuario.update({
+            email: form.email,
+            usuario: form.usuario,
+            contrasena: bcrypt.hashSync(form.contrasena, 10), 
+            fecha: form.fecha,
+            dni:form.dni,
+            id : id
+
+        }).then(function (edit) {
+            return res.redirect("/")})
+
+            
+    },
     register: function (req, res) {
         return res.render('register')
     },   
