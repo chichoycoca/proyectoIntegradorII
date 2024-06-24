@@ -10,13 +10,13 @@
 			<h2 class="products-title"><%= producto.producto %> </h2> 
 			<% if (cookies.usuarioLogueado !== undefined){ %>
                 <<% if (producto.usuario.email !== cookies.usuarioLogueado.id) { %>
-					<p class="product-detail-description" > Publicado por: <%= producto.usuario.email %></p>
+					<p class="product-detail-description" > Publicado por: <a href="/usuario/profile/<%= producto.usuario.id %>"><%= producto.usuario.usuario %></a></p>
 				<% }%>
 				<% }%>
 
 			<p class="product-detail-description">
 					
-				<a href="http://localhost:3000/producto/editProduct/<%= producto.id %>/<%producto.id_user%>">Editar</a>
+				<a href="http://localhost:3000/producto/editProduct/<%= producto.id %>/<%=producto.id_user%>">Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">

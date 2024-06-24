@@ -88,7 +88,7 @@ let productoController = {
     },
 
     editProducto: function(req,res){
-        const id_user = req.params.id_user;
+        const id_user = req.cookies.usuarioLogueado.id;
         const id_product = req.params.id_product;
 
         data.Producto.findByPk(id_product, {
@@ -99,7 +99,6 @@ let productoController = {
                 return res.render('error', { 
                     message: 'Product not found' });
             }
-            
             if (producto.id_user !== id_user) {
                 return res.status(403).send("No podes editar esta publicacion");
             }
@@ -128,7 +127,7 @@ let productoController = {
             where : { id : id_product}
         })
         .then(function(result){
-            return res.redirect(`/producto/:id`);
+            return res.redirect(`/producto/${id_product}`);
         })
         .catch(function(error) {
             console.log(error); 

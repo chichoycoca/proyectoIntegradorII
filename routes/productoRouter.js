@@ -14,10 +14,9 @@ let crearProductoValidations=[
 
 router.get("/", productoController.index);
 router.get('/add', productoController.productAdd);
-router.get('/buscar', productoController.buscador)
-router.post('/add',crearProductoValidations, productoController.crearProducto)
-router.get('/:id', productoController.detalleProducto);
+router.get('/buscar', productoController.buscador);
+router.post('/add',crearProductoValidations, productoController.crearProducto);
 router.get("/editProduct/:id_product/:id_user", productoController.editProducto);
 router.post("/editedProduct/:id_product", crearProductoValidations, productoController.editedProducto);
-
+router.get('/:id', productoController.detalleProducto);
 module.exports = router;
