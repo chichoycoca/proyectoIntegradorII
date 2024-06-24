@@ -8,8 +8,12 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= producto.producto %> </h2> 
+			
+			<% if (producto.usuario.email !== cookies.usuarioLogueado.id) { %>
+				<p class="product-detail-description" > Publicado por: <%= producto.usuario.email %></p>
+			<% }%>
 			<p class="product-detail-description">
-					<%  //condicional para que solo si es tu producto se pueda editar%>
+					
 				<a href="/producto/add">Editar</a>
 			</p>
 		</div>
@@ -22,35 +26,19 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<article>
-							<img src="<%=  %>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/usuario/profile"><%=// user[3].usuario %></a> </strong>
-								<%= //data[0].comentarios[0].texto %></p>
+						<% for (let i = 0; i < producto.comentarios.length; i++) { %>
+							<article>
+								<a href="/usuario/profile/<%= producto.comentarios[i].id_user %>"><img src="/images/users/<%= producto.comentarios[i].usuario.fotodeperfil %>" alt=""></a>
+                        <div class="data">
+                            <p class="user">
+                                <strong> <a href="/usuario/profile/<%= producto.comentarios[i].id_user %>"> <%= producto.comentarios[i].usuario.usuario %> </a></strong>
+                            <p><%= producto.comentarios[i].comentario  %></p>
+                        </div>
 								
-									
-								
-							</div>
-						</article>
-						<article>
-							<img src="<%= //user[2].fotoPerfil %>" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/usuario/profile"><%=// user[2].usuario %></a> </strong>
-									<%= //data[0].comentarios[1].texto %></p>
-							</div>
-						</article>
-						<article>
-							<img src="<%= //user[1].fotoPerfil %>" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/usuario/profile"><%=// user[1].usuario %></a> </strong>
-									<%= //data[0].comentarios[2].texto %>
-									</p>
-							</div>
-						</article>
-						
+							
+							</article>
+							
+						<% } %>
 
 					</section>
 					<form class="form" action="" method="get">

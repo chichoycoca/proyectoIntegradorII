@@ -15,9 +15,10 @@ let crearProductoValidations=[
 
 
 
-router.get('/:id', productoController.detalleProducto);
+
 router.get('/add', productoController.productAdd);
 router.get('/buscar', productoController.buscador)
 router.post('/add',crearProductoValidations, productoController.crearProducto)
+router.get('/:id', productoController.detalleProducto);
 
 module.exports = router;
