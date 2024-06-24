@@ -2,6 +2,8 @@
 const db = require("../db/index")
 const data = require ('../database/models')
 let {validationResult, cookie} = require("express-validator")
+const op = data.Sequelize.Op;
+
 
 let productoController = {
     index: function (req,res) {
@@ -60,9 +62,9 @@ let productoController = {
         )
         .then(resultados => {
             res.render('search-results', {
-                productos: resultados,
+               productos: resultados,
                 query: srch
-            });
+            })
         })
     },
     crearProducto : function(req,res){
