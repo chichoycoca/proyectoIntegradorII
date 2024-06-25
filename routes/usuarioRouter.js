@@ -18,12 +18,19 @@ let loginValidations = [
       .isEmail().withMessage("Ingrese un email correcto"),
     body("contrasena").notEmpty().withMessage("Campo contraseña incompleto"),
   ];
+let editProfileValidations = [
+  body('email').notEmpty().withMessage("Pone el email")
+  .isEmail().withMessage("El email tiene que ser válido"),
+  body("dni").notEmpty().withMessage("Completa el DNI")
 
+  
+
+]
 
 router.get('/login', usuarioController.login);
 
 router.get('/profile-edit/:id', usuarioController.profileEdit);
-router.post('/profile-edit/:id', usuarioController.procesadorProfileEdit);
+router.post('/profile-edit/:id',editProfileValidations, usuarioController.procesadorProfileEdit);
 router.get('/register',usuarioController.register);
 router.post('/register', registerValidations,usuarioController.store);
 router.post('/logout', usuarioController.logout);

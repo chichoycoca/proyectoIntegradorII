@@ -38,6 +38,8 @@ let usuarioController = {
         return res.render('profile-edit')
     },
     procesadorProfileEdit: function (req, res) {
+        let errors = validationResult(req);
+        if (errors.isEmpty()){
         let form = req.body
         let id = req.params.id
         data.Usuario.update({
@@ -56,7 +58,13 @@ let usuarioController = {
     ).then(function (edit) {
             return res.redirect("/")})
 
-            
+    }else{
+        res.render('profile-edit', {errors:errors.array(), old: req.body});
+
+    }
+
+
+
     },  
     register: function (req, res) {
         //solo sirve para mostrar la vista

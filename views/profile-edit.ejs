@@ -5,20 +5,27 @@
 	<div class="row">
 		<div class="col-12">
 			<h2 class="products-title">Edita tu perfil</h2>
+			<% if (locals.errors){
+				errors.forEach(error => {	%>
+					<p> <%= error.msg %> </p> 
+				<%}) %>
+				 
+			<%	} %>
+	
 		</div>
 		<!-- Show the "ultimos" products -->
 		<h2 class="col-12"> 
 			<form class="form-register" method="post">
 			<label for="email">Email:</label>
-			<input type="email" placeholder="pcv@udesa.edu.ar" name="email" value=""><br><br>
+			<input type="email" placeholder="pcv@udesa.edu.ar" name="email" value="" required><br><br>
 			<label for="user">Usuario:</label>
-			<input type="text" placeholder="PCVcamisetas" name="usuario" ><br><br>
+			<input type="text" placeholder="PCVcamisetas" name="usuario" required><br><br>
 			<label for="pass">Contraseña:</label>
-			<input type="password" placeholder="*******" name="contrasena" ><br><br>
+			<input type="password" placeholder="*******" name="contrasena" required><br><br>
 			<label for="fecha-nacimiento">Fecha De Nacimiento:</label>
-			<input type="date" name="fecha"><br><br>
+			<input type="date" name="fecha" required><br><br>
 			<label for="documento">Documento:</label>
-			<input type="number" placeholder="46649856" name="dni"><br><br>
+			<input type="number" placeholder="46649856" name="dni" required><br><br>
 			<button type="submit" >Enviar</button>
 
 		</form>
