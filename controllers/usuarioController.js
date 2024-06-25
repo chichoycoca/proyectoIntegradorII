@@ -16,7 +16,7 @@ let usuarioController = {
         })
         .then(usuario => {
             if (!usuario){
-                return res.status(404).send("User not found");
+                return res.send("User not found");
             }
             
 
@@ -61,13 +61,13 @@ let usuarioController = {
     register: function (req, res) {
         //solo sirve para mostrar la vista
         if (req.cookies.usuarioLogueado || req.session.userSession) {
-          return res.status(404).send("Ya estas registrado");
+          return res.send("Ya estas registrado");
         } else {return res.render("register", {})}
       },
       
       login: function (req, res) {
         if (req.cookies.usuarioLogueado){
-          return res.status(404).send("Ya iniciaste sesión");
+          return res.send("Ya iniciaste sesión");
         } else {return res.render("login", {})}
       },
     

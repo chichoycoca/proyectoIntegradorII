@@ -1,5 +1,5 @@
 
-const db = require("../db/index")
+
 const data = require ('../database/models')
 let {validationResult, cookie} = require("express-validator");
 const { where } = require("sequelize");
@@ -22,7 +22,7 @@ let productoController = {
         })
         .catch(error => {
             console.error(error);
-            res.status(500).send('Error del servidor');
+            res.send('Error del servidor');
         });
     }
 
@@ -100,14 +100,14 @@ let productoController = {
                     message: 'Product not found' });
             }
             if (producto.id_user !== id_user) {
-                return res.status(403).send("No podes editar esta publicacion");
+                return res.send("No podes editar esta publicacion");
             }
             res.render('product-edit', { 
                 producto: producto,});
         })
         .catch(error => {
             console.error(error);
-            res.status(500).send('Error interno del servidor');
+            res.send('Error interno del servidor');
         });
     },
 
@@ -131,7 +131,7 @@ let productoController = {
         })
         .catch(function(error) {
             console.log(error); 
-            return res.status(500).send("Hubo un error al editar el producto"); 
+            return res.send("Hubo un error al editar el producto"); 
         });
     } else { 
         const id_user = req.params.id_user;
@@ -146,27 +146,28 @@ let productoController = {
             }
             
             if (producto.id_user !== id_user) {
-                return res.status(403).send("No tienes permiso para editar este producto");
+                return res.send("No tienes permiso para editar este producto");
             }
             res.render('product-edit', { producto: producto, errors: errors.array(), old: req.body });
         })
         .catch(function(error){
             console.error(error);
-            res.status(500).send('Error interno del servidor');
+            res.send('Error interno del servidor');
         });
         }
     },
     borradoProducto: function(req,res){
-        let id = req.body.id;
-    let filtro = {where: [{id: id}]}
-    data.Producto.destroy(filtro)
-    .then(function (result) {
-        
-        return res.redirect('/')
-    }).catch()
+        let id = req.params.id;
+    data.Producto.findByPk(id)
+    .then(producto => {
+       return data.Producto.destroy({where:{id:id}})
+    })
+    .then(function () {
+          return res.redirect('/')
+    })
     }
 
-
+    
 
         
         

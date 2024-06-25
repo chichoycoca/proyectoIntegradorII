@@ -13,8 +13,8 @@
 					<p class="product-detail-description" > Publicado por: <a href="/usuario/profile/<%= producto.usuario.id %>"><%= producto.usuario.usuario %></a></p>
 				<% }%>
 				<% }%>
-				<form action="/producto/borradoProducto" method="post">
-					<input type="hidden" name="id" value="">
+				<form action="/producto/borradoProducto/<%= producto.id %>" method="post">
+		
 					<button type="submit">Borrar el producto</button>
 				</form>
 
