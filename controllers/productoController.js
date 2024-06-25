@@ -53,7 +53,7 @@ let productoController = {
     buscador: function(req,res){
         let srch = req.query.search
         data.Producto.findAll(
-        {
+        {order: [['createdAt', 'DESC']],
         where: {
             [op.or] : [
                 {producto : {[op.like]: `%${srch}%`}},

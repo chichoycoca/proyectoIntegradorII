@@ -19,6 +19,7 @@ let loginValidations = [
     body("contrasena").notEmpty().withMessage("Campo contraseña incompleto"),
   ];
 
+
 router.get('/login', usuarioController.login);
 
 router.get('/profile-edit/:id', usuarioController.profileEdit);

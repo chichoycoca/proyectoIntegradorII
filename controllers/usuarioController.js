@@ -61,13 +61,13 @@ let usuarioController = {
     register: function (req, res) {
         //solo sirve para mostrar la vista
         if (req.cookies.usuarioLogueado || req.session.userSession) {
-          return res.send("Ya estas registrado");
+          return res.redirect("/");
         } else {return res.render("register", {})}
       },
       
       login: function (req, res) {
         if (req.cookies.usuarioLogueado){
-          return res.send("Ya iniciaste sesión");
+          return res.redirect('/');
         } else {return res.render("login", {})}
       },
     
