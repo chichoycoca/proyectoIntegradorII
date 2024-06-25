@@ -165,7 +165,36 @@ let productoController = {
     .then(function () {
           return res.redirect('/')
     })
-    }
+    },
+    comentar: function (req, res){
+        let errors = validationResult(req);
+        let id = req.params.id;
+        if (errors.isEmpty()){
+        let form = req.body
+        data.Producto.findByPk(id,  {include: [{
+            association: 'usuario'
+        }, {
+            association: 'comentarios',
+            include: [{ association: 'usuario' }],
+            order: [['createdAt', 'DESC']]
+        }] })
+
+        data.Comentario.create({
+            comentario: form.comentario,
+            id_user : req.cookies.usuarioLogueado.id,
+            id_post : id,
+        
+        }).then(function(comentario) {
+         return res.redirect(`/producto/${id}`)
+        })
+        .catch(error=>console.log(error))
+    }else{
+        return res.render('producto', {
+            producto: producto,
+            errors: errors.array(),
+            old: req.body
+        })
+    }}
 
     
 

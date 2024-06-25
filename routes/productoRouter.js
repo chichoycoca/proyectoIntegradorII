@@ -10,6 +10,11 @@ let crearProductoValidations=[
 
 ];
 
+let comentarValidations=[
+    body('comentario').notEmpty().withMessage("Por favor agrega un comentario")
+    .isLength({ min: 3 }).withMessage('El comentario debe tener al menos 3 caracteres')
+]
+
 
 
 router.get("/", productoController.index);
@@ -20,4 +25,6 @@ router.get("/editProduct/:id_product/:id_user", productoController.editProducto)
 router.post("/editedProduct/:id_product", crearProductoValidations, productoController.editedProducto);
 router.get('/:id', productoController.detalleProducto);
 router.post('/borradoProducto/:id', productoController.borradoProducto)
+router.post('/comentario/:id', comentarValidations, productoController.comentar);
+
 module.exports = router;
